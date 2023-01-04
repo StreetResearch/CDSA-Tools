@@ -1,5 +1,6 @@
 #set up modules
 import numpy as np
+import os
 
 #find the length column
 header = np.loadtxt (fname="results.csv", dtype=str, delimiter=",", max_rows=1, unpack = False)
@@ -26,8 +27,11 @@ wn = Elength2/Elength
 pdi = wn/ln
 
 #output data to a text file
+dir_name = os.path.relpath(".","..")
+
 f=open("statistics.txt", "w")
-f.write("number of micelles counted: %d \n" % number_counted
+f.write("%s \n" % dir_name
+        + "number of micelles counted: %d \n" % number_counted
         + "number average length, Ln: %.2f nm \n" % ln
         + "weight average length, Wn: %.2f nm \n" % wn
         + "Wn / Ln (dispersity): %.2f nm \n" % pdi
