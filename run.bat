@@ -1,1 +1,1 @@
-python mc.py
+python micelle_counting.py
