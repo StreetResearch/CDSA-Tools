@@ -1,0 +1,8 @@
+number of micelles counted: 10 
+number average length, Ln: 46.40 nm 
+weight average length, Wn: 54.39 nm 
+Wn / Ln (dispersity): 1.17 nm 
+standard deviation: 19.26 nm 
+standard deviation / Ln: 0.41 nm 
+5% confidence interval: 27.21 nm 
+95% confidence interval: 78.83 nm 

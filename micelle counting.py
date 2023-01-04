@@ -26,60 +26,14 @@ wn = Elength2/Elength
 pdi = wn/ln
 
 #output data to a text file
-output_array1 = np.array((number_counted, ln, wn))
-    # ("Wn / Ln (dispersity)", pdi),
-    # ("standard deviation (nm)", sd),
-    # ("standard deviation / Ln", sdln),
-    # (r"5% confidence interval (nm)", ci5),
-    # (r"95% confidence interval (nm)", ci95)
-    
-
-output_array2 = np.array((
-    "number of micelles counted",
-    "number average length (Ln) (nm)",
-    "weight average length (Wn) (nm)"))
-    # ("Wn / Ln (dispersity)", pdi),
-    # ("standard deviation (nm)", sd),
-    # ("standard deviation / Ln", sdln),
-    # (r"5% confidence interval (nm)", ci5),
-    # (r"95% confidence interval (nm)", ci95)
-    
-    
-    
-#    "number of micelles counted: %d \r\n" % number_counted
-#out2 = "number average length, Ln: %.2f nm \r\n" % ln
-#out3 = "weight average length, Wn: %.2f nm \r\n" % wn
-# out4 = np.array(("Wn / Ln (dispersity): ", "%.2f" % pdi, " nm"))
-# out5 = np.array(("standard deviation: ", "%.2f" % sd, " nm"))
-# out6 = np.array(("standard deviation / Ln", "%.2f" % sdln, " nm"))
-# out7 = np.array(("5'%'confidence interval: ", "%.2f" % ci5, " nm"))
-# out8 = np.array(("95'%'confidence interval: ", "%.2f" % ci95, " nm"))   
-#output_array = np.array((out1, out2)) 
-                         #out3, out4, out5, out6, out7, out8))
-
-output_headers = list((
-     "number of micelles counted",
-     "number average length (Ln) (nm)",
-     "weight average length (Wn) (nm)",
-     "Wn / Ln (dispersity)",
-     "standard deviation (nm)",
-     "standard deviation / Ln",
-     r"5% confidence interval (nm)",
-     r"95% confidence interval (nm)"
-     ))
-
-np.savetxt('statistics.csv', (output_array1, output_array2), delimiter=",", fmt=("%s, %.2f"), comments="")
-#header=str(",".join(output_headers))
-
-#print (output_array)
-
-# print (all_data)
-# print (type(all_data))
-# print ("%.2f" % ln + " nm")
-# print (sd)
-# print (ci5)
-# print (number_counted)
-# print (length2)
-# print (wn)
-# print (sdln)
-# print (pdi)
+f=open("statistics.txt", "w")
+f.write("number of micelles counted: %d \n" % number_counted
+        + "number average length, Ln: %.2f nm \n" % ln
+        + "weight average length, Wn: %.2f nm \n" % wn
+        + "Wn / Ln (dispersity): %.2f nm \n" % pdi
+        + "standard deviation: %.2f nm \n" % sd
+        + "standard deviation / Ln: %.2f nm \n" % sdln
+        + r"5% confidence interval: " + "%.2f nm \n" % ci5
+        + r"95% confidence interval: " + "%.2f nm \n" % ci95
+        )
+f.close()
