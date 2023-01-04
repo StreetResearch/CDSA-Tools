@@ -34,7 +34,7 @@ f.write("%s \n" % dir_name
         + "number of micelles counted: %d \n" % number_counted
         + "number average length, Ln: %.2f nm \n" % ln
         + "weight average length, Wn: %.2f nm \n" % wn
-        + "Wn / Ln (dispersity): %.2f nm \n" % pdi
+        + "Wn / Ln (dispersity): %.2f \n" % pdi
         + "standard deviation: %.2f nm \n" % sd
         + "standard deviation / Ln: %.2f nm \n" % sdln
         + r"5% confidence interval: " + "%.2f nm \n" % ci5
