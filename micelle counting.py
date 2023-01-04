@@ -37,3 +37,5 @@ f.write("number of micelles counted: %d \n" % number_counted
         + r"95% confidence interval: " + "%.2f nm \n" % ci95
         )
 f.close()
+
+#plot the data as a histogram too
