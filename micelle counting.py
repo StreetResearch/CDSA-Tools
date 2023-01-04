@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 #find the length column
-header = np.loadtxt (fname="results.csv", dtype=str, delimiter=",", max_rows=1, unpack = False)
+header = np.loadtxt (fname="Results.csv", dtype=str, delimiter=",", max_rows=1, unpack = False)
 header = header.tolist()
 length_col_index = header.index("Length")
 
