@@ -47,33 +47,37 @@ f.close()
 
 #plot the data as a histogram too
 plt.rc ('font', size=8)
-plt.figure(1, figsize=(1.75,2.5), dpi= 300)
+plt.figure(1, figsize=(2.5,2.5), dpi= 600)
 
 histogram = plt.hist(all_data,
           bins="auto",
+          density=True,
+          stacked=True,
           color="r",
           edgecolor="k",
-          label=dir_name
+#          label=dir_name
           )
+plt.xticks(np.arange(0, round(max(all_data)), round(max(all_data/5))))
+plt.yticks(np.arange(0, 0.08, 0.01))
 plt.xlabel("Length (nm)")
-plt.ylabel("Count")
+plt.ylabel("Normalized Count")
 plt.tight_layout()
-plt.legend()
-#plt.savefig("histogram.png")
+#plt.legend()
+plt.savefig("normalized_histogram.png")
 
-plt.figure(2, figsize=(3.5,2.5), dpi= 300)
 sns.displot(all_data, 
               color="r",
               edgecolor="k",
               label=dir_name,
-              kde=True
+              kde=True,
+              height=2.5,
+              aspect=3.5/2.5
               )
 
 plt.xlabel("Length (nm)")
 plt.ylabel("Count")
 plt.tight_layout()
 plt.legend()
-#plt.savefig("histogram.png")
+plt.savefig("histogram_with_density.png", dpi=600)
 
-
-plt.show()
+#plt.show()
