@@ -1,7 +1,6 @@
 #----set up modules----
 import numpy as np
 import os
-import matplotlib
 import matplotlib.pyplot as plt
 import seaborn as sns
 
