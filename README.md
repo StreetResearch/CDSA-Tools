@@ -6,7 +6,6 @@ You will need the following installed on your system to utilize these codes:
   <li>Numpy</li>
   <li>Matplotlib</li>
 </ol>
-<br>
 So far, we have:
 <br>
 <ol>
