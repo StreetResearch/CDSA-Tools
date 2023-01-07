@@ -1,6 +1,9 @@
 #set up modules
 import numpy as np
 import os
+import matplotlib
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 #find the length column
 header = np.loadtxt (fname="Results.csv", dtype=str, delimiter=",", max_rows=1, unpack = False)
@@ -43,3 +46,34 @@ f.write("%s \n" % dir_name
 f.close()
 
 #plot the data as a histogram too
+plt.rc ('font', size=8)
+plt.figure(1, figsize=(1.75,2.5), dpi= 300)
+
+histogram = plt.hist(all_data,
+          bins="auto",
+          color="r",
+          edgecolor="k",
+          label=dir_name
+          )
+plt.xlabel("Length (nm)")
+plt.ylabel("Count")
+plt.tight_layout()
+plt.legend()
+#plt.savefig("histogram.png")
+
+plt.figure(2, figsize=(3.5,2.5), dpi= 300)
+sns.displot(all_data, 
+              color="r",
+              edgecolor="k",
+              label=dir_name,
+              kde=True
+              )
+
+plt.xlabel("Length (nm)")
+plt.ylabel("Count")
+plt.tight_layout()
+plt.legend()
+#plt.savefig("histogram.png")
+
+
+plt.show()
