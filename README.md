@@ -6,7 +6,7 @@ You will need the following installed on your system to utilize these codes:
   <li>Numpy</li>
   <li>Matplotlib</li>
 </ol>
-So far, we have:
+So far, we have:<br>
 <ol>
   <li>General chemistry tools:
     <ol>
