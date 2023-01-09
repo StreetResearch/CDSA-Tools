@@ -86,7 +86,7 @@ def getnormhistogram(datatoplot):
                 edgecolor="k",
         #          label=dir_name
                 )
-        plt.xticks(np.arange(0, round(max(datatoplot)*1.1), xaxis_max))
+        plt.xticks(np.arange(0, xaxis_max), binsize))
         plt.yticks(np.arange(0, 0.08, 0.01))
         plt.xlabel("Length (nm)")
         plt.ylabel("Normalized Count")
