@@ -54,19 +54,39 @@ def getstats(dataset):
         f.close()
 
 def getnormhistogram(datatoplot):
+        #determine what bin sizes, scales and ticks to use
+        if round(max(datatoplot)) < 20: 
+                binsize = 2
+                xaxis_max = 30
+        elif round(max(datatoplot)) < 100:
+                binsize = 10
+                xaxis_max = 150
+        elif round(max(datatoplot)) < 200:
+                binsize = 20
+                xaxis_max = 300
+        elif round(max(datatoplot)) < 500:
+                binsize = 50
+                xaxis_max = 600
+        elif round(max(datatoplot)) < 1000:
+                binsize = 100
+                xaxis_max = 1100
+        else:
+                binsize = 100
+                xaxis_max = round(max(datatoplot)+100)
+        
         #plot the data as a histogram too
         plt.rc ('font', size=8)
         plt.figure(1, figsize=(2.5,2.5), dpi= 600)
 
-        histogram = plt.hist(datatoplot,
-                bins="auto",
+        plt.hist(datatoplot,
+                bins=binsize,
                 density=True,
                 stacked=True,
                 color="r",
                 edgecolor="k",
         #          label=dir_name
                 )
-        plt.xticks(np.arange(0, round(max(datatoplot)), round(max(datatoplot/5))))
+        plt.xticks(np.arange(0, round(max(datatoplot)*1.1), xaxis_max))
         plt.yticks(np.arange(0, 0.08, 0.01))
         plt.xlabel("Length (nm)")
         plt.ylabel("Normalized Count")
