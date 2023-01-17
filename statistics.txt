@@ -1,0 +1,9 @@
+CDSA-Tools 
+number of micelles counted: 245 
+number average length, Ln: 29.97 nm 
+weight average length, Wn: 33.26 nm 
+Wn / Ln (dispersity): 1.11 
+standard deviation: 9.92 nm 
+standard deviation / Ln: 0.33 nm 
+5% confidence interval: 16.76 nm 
+95% confidence interval: 46.78 nm 
