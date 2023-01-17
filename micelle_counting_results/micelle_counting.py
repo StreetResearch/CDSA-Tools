@@ -12,12 +12,12 @@ dir_name = os.path.relpath(".","..")
 #function used to load the csv file with the length results in (only loads and returns 'length' column)
 def loaddata(filename):
         #find the length column
-        header = np.loadtxt (fname=f"{filename}.csv", dtype=str, delimiter=",", max_rows=1, unpack = False)
+        header = np.loadtxt (fname=f"{filename}", dtype=str, delimiter=",", max_rows=1, unpack = False)
         header = header.tolist()
         length_col_index = header.index("Length")
 
         #load data
-        loaded_data = np.loadtxt(fname=(f"{filename}.csv"), dtype=float, delimiter=",", skiprows=1, usecols = (length_col_index), unpack = True)
+        loaded_data = np.loadtxt(fname=(f"{filename}"), dtype=float, delimiter=",", skiprows=1, usecols = (length_col_index), unpack = True)
         return loaded_data
 
 #create the 'getstats' function - will output a text file with the stats of the micelle lengths
@@ -123,7 +123,7 @@ def gethistogram(datatoplot):
 #plt.show()
 
 #----run functions on the dataset----
-all_data = loaddata("Results")
+all_data = loaddata("Results.csv")
 getstats(all_data)
 getnormhistogram(all_data)
 gethistogram(all_data)
