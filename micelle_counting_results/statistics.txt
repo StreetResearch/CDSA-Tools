@@ -1,4 +1,4 @@
-Micelle Counting Stats and Histogram 
+micelle_counting_results 
 number of micelles counted: 245 
 number average length, Ln: 29.97 nm 
 weight average length, Wn: 33.26 nm 
