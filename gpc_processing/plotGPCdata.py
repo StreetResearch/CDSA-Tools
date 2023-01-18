@@ -30,6 +30,7 @@ def compile_GPC_data(total_samples):
 
 #output the GPC data as a text file
 def data_array_to_text(data_array):
+    #can add in if statements for multiple samples with while loops that have i,j as indices, start at 0 and increase to max? also name varaibles,
     #create pandas dataframe
     s1=pd.Series(data_array[0][0], name='p1 mw')
     s2=pd.Series(data_array[0][1], name='p1 WF')
@@ -41,15 +42,37 @@ def data_array_to_text(data_array):
     
 #plot the GPC data as a graph
 def plot_GPC_data(arrayed_data):
+    dataset1 = np.array(arrayed_data[0], dtype=float)
+    dataset2 = np.array(arrayed_data[1], dtype=float)    
+    plt.rc('font', size=8)
+    
+    fig, ax = plt.subplots(figsize=(6.4,4.8), dpi=1200, layout='constrained')
+    ax.plot(dataset1[0], dataset1[1], 'k', label='PFTMC$_{16}$-$\it{b}$-PDMAEMA$_{131}$', linewidth=2)
+    ax.plot(dataset2[0], dataset2[1], 'r', label='BD-PFTMC$_{16}$-$\it{b}$-PDMAEMA$_{112}$', linewidth=2)
+    ax.set_xlabel('Molecular Weight (Da)')
+    ax.set_ylabel('WF/dLogMw')
+    ax.set_xscale('log')
+    ax.set_xlim(left=1, right=10000000000)
+    ax.set_ylim(bottom=0, top=20)
+    ax.set_xticks((1,10,100,1000,10000,100000,1000000,10000000,100000000,1000000000,1000000000))
+    ax.legend()
+    #fig.set_dpi(600)
+    plt.savefig('combined_GPC_plot.png')
+    #plt.show()
     #plot graph here          
 
 
 total_samples = int(input('how many samples do you have to plot? '))
 to_plot = compile_GPC_data(total_samples)
 data_array_to_text(to_plot)
+plot_GPC_data(to_plot)
+
+#ADD IN NORMALIZED WF/dLogMW!! do at import stage?
 
 
 #----run functions on the dataset----
+
+
 
 # #find out how many datasets
 # total_samples = int(input('how many samples do you have to plot? '))
