@@ -39,27 +39,9 @@ def data_array_to_text(data_array):
     #print(df)
     df.to_csv('arrayed_data.csv', index=False, na_rep='')
     
-    # data_array = np.array(data_array)
-    # m1=data_array[0,0]
-    # w1=data_array[0,1]
-    # m2=data_array[1,0]
-    # w2=data_array[1,1]
-    # m1=','.join(m1)
-    # w1=','.join(w1)
-    # m2=','.join(m2)
-    # m2=','.join(m2)
-    
-    #print((data_array.shape))
-    #print(data_array[0,0])
-    #index = 1
-    #while index <= data_array
-    # f=open('arrayed_data.csv', 'w')
-    # f.write("%s \n" % data_array[0][0]
-    #         +"%s \n" % data_array[0][1]
-    #         +"%s \n" % data_array[1][0]
-    #         +"%s \n" % data_array[1][1])
-    # f.close()
-            
+#plot the GPC data as a graph
+def plot_GPC_data(arrayed_data):
+    #plot graph here          
 
 
 total_samples = int(input('how many samples do you have to plot? '))
