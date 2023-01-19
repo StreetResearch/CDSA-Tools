@@ -71,7 +71,7 @@ def plot_GPC_data(arrayed_data, no_of_samples):
     ax.set_xlim(left=1, right=10000000000)
     ax.set_ylim(bottom=0, top=1)
     ax.set_xticks((1,10,100,1000,10000,100000,1000000,10000000,100000000,1000000000,1000000000,10000000000))
-    ax.set_yticks((0,0.2,0.4,0.8,1,1.2))
+    ax.set_yticks((0,0.2,0.4,0.6,0.8,1.0,1.2))
     ax.legend()
     #fig.set_dpi(600)
     plt.savefig('combined_GPC_plot.png')
