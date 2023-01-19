@@ -32,28 +32,41 @@ def compile_GPC_data(total_samples):
     return(to_plot)
 
 #output the GPC data as a text file
-def data_array_to_text(data_array):
+def data_array_to_text(data_array, no_of_samples):
     #can add in if statements for multiple samples with while loops that have i,j as indices, start at 0 and increase to max? also name varaibles,
     #create pandas dataframe
     s1=pd.Series(data_array[0][0], name='p1 mw')
     s2=pd.Series(data_array[0][1], name='p1 WF')
-    s3=pd.Series(data_array[1][0], name='p2 mw')
-    s4=pd.Series(data_array[1][1], name='p2 WF')
-    df=pd.concat([s1,s2,s3,s4], axis=1)
+    if no_of_samples > 1:
+        s3=pd.Series(data_array[1][0], name='p2 mw')
+        s4=pd.Series(data_array[1][1], name='p2 WF')
+        df=pd.concat([s1,s2,s3,s4], axis=1)
+    if no_of_samples > 2:
+        s5=pd.Series(data_array[2][0], name='p3 mw')
+        s6=pd.Series(data_array[2][1], name='p3 WF')
+        df=pd.concat([s1,s2,s3,s4,s5,s6], axis=1)
+    if no_of_samples == 1:
+        df=pd.concat([s1,s2], axis=1)
     #print(df)
     df.to_csv('arrayed_data.csv', index=False, na_rep='')
     
 #plot the GPC data as a graph
-def plot_GPC_data(arrayed_data):
+def plot_GPC_data(arrayed_data, no_of_samples):
     dataset1 = np.array(arrayed_data[0], dtype=float)
-    dataset2 = np.array(arrayed_data[1], dtype=float)    
+    if no_of_samples > 1:
+        dataset2 = np.array(arrayed_data[1], dtype=float)
+    if no_of_samples > 2:
+        dataset3 = np.array(arrayed_data[2], dtype=float)    
     plt.rc('font', size=8)
     
     fig, ax = plt.subplots(figsize=(6.4,4.8), dpi=1200, layout='constrained')
     ax.plot(dataset1[0], dataset1[1], 'k', label='PFTMC$_{16}$-$\it{b}$-PDMAEMA$_{131}$', linewidth=2)
-    ax.plot(dataset2[0], dataset2[1], 'r', label='BD-PFTMC$_{16}$-$\it{b}$-PDMAEMA$_{112}$', linewidth=2)
+    if no_of_samples > 1:
+        ax.plot(dataset2[0], dataset2[1], 'r', label='BD-PFTMC$_{16}$-$\it{b}$-PDMAEMA$_{112}$', linewidth=2)
+    if no_of_samples > 2:
+        ax.plot(dataset3[0], dataset3[1], 'c', label='Block$_{1}$-$\it{b}$-Block$_{2}$', linewidth=2)
     ax.set_xlabel('Molecular Weight (Da)')
-    ax.set_ylabel('WF/dLogMw')
+    ax.set_ylabel('Normalized WF/dLogMw')
     ax.set_xscale('log')
     ax.set_xlim(left=1, right=10000000000)
     ax.set_ylim(bottom=0, top=1)
@@ -68,8 +81,8 @@ def plot_GPC_data(arrayed_data):
 
 total_samples = int(input('how many samples do you have to plot? '))
 to_plot = compile_GPC_data(total_samples)
-data_array_to_text(to_plot)
-plot_GPC_data(to_plot)
+data_array_to_text(to_plot, total_samples)
+plot_GPC_data(to_plot, total_samples)
 
 #ADD IN NORMALIZED WF/dLogMW!! do at import stage?
 
