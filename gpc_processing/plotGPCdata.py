@@ -21,9 +21,12 @@ def compile_GPC_data(total_samples):
     while currentsample <= total_samples:
         fname = input('What is the filename of the next polymer? (do not add extension) ')
         mw, WFdLogMW = gpc_data_import(fname)
+        WFdLogMW = WFdLogMW.astype(float)
         mw = np.ndarray.tolist(mw)
         WFdLogMW = np.ndarray.tolist(WFdLogMW)
-        currentdata = list([mw, WFdLogMW])
+        #normalize WFdLogMw
+        norm_WFdLogMW = (WFdLogMW-np.min(WFdLogMW))/(np.max(WFdLogMW)-np.min(WFdLogMW))
+        currentdata = list([mw, norm_WFdLogMW])
         to_plot.append(currentdata)
         currentsample += 1
     return(to_plot)
@@ -53,8 +56,9 @@ def plot_GPC_data(arrayed_data):
     ax.set_ylabel('WF/dLogMw')
     ax.set_xscale('log')
     ax.set_xlim(left=1, right=10000000000)
-    ax.set_ylim(bottom=0, top=20)
-    ax.set_xticks((1,10,100,1000,10000,100000,1000000,10000000,100000000,1000000000,1000000000))
+    ax.set_ylim(bottom=0, top=1)
+    ax.set_xticks((1,10,100,1000,10000,100000,1000000,10000000,100000000,1000000000,1000000000,10000000000))
+    ax.set_yticks((0,0.2,0.4,0.8,1,1.2))
     ax.legend()
     #fig.set_dpi(600)
     plt.savefig('combined_GPC_plot.png')
