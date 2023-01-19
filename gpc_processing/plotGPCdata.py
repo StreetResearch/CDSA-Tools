@@ -52,6 +52,7 @@ def data_array_to_text(data_array, no_of_samples):
     
 #plot the GPC data as a graph
 def plot_GPC_data(arrayed_data, no_of_samples):
+    #sort datasets out
     dataset1 = np.array(arrayed_data[0], dtype=float)
     if no_of_samples > 1:
         dataset2 = np.array(arrayed_data[1], dtype=float)
@@ -59,6 +60,7 @@ def plot_GPC_data(arrayed_data, no_of_samples):
         dataset3 = np.array(arrayed_data[2], dtype=float)    
     plt.rc('font', size=8)
     
+    #configure and plot graph
     fig, ax = plt.subplots(figsize=(6.4,4.8), dpi=1200, layout='constrained')
     ax.plot(dataset1[0], dataset1[1], 'k', label='PFTMC$_{16}$-$\it{b}$-PDMAEMA$_{131}$', linewidth=2)
     if no_of_samples > 1:
@@ -73,69 +75,18 @@ def plot_GPC_data(arrayed_data, no_of_samples):
     ax.set_xticks((1,10,100,1000,10000,100000,1000000,10000000,100000000,1000000000,1000000000,10000000000))
     ax.set_yticks((0,0.2,0.4,0.6,0.8,1.0,1.2))
     ax.legend()
-    #fig.set_dpi(600)
     plt.savefig('combined_GPC_plot.png')
     #plt.show()
-    #plot graph here          
+            
 
-
+#----run functions on the dataset----
+#find out how many datasets
 total_samples = int(input('how many samples do you have to plot? '))
+#process the data
 to_plot = compile_GPC_data(total_samples)
 data_array_to_text(to_plot, total_samples)
 plot_GPC_data(to_plot, total_samples)
 
-#ADD IN NORMALIZED WF/dLogMW!! do at import stage?
-
-
-#----run functions on the dataset----
-
-
-
-# #find out how many datasets
-# total_samples = int(input('how many samples do you have to plot? '))
-
-# #----CEAN UP THE FOLLOWING AND PUT INTO FUNCTIONS:
-# #1) get sample data
-# #2) save sample data as text file
-# #3) plot sample data
-# #use loop and f.write to write file line by line
-
-# #create array to hold all datasets
-# to_plot = list()
-
-# #loop through number of samples appending datasets into array
-# currentsample = 1
-
-# while currentsample <= total_samples:
-#     fname = input('What is the filename of the next polymer? (do not add extension) ')
-#     mw, WFdLogMW = gpc_data_import(fname)
-#     mw = np.ndarray.tolist(mw)
-#     WFdLogMW = np.ndarray.tolist(WFdLogMW)
-#     #currentdata = list([mw, WFdLogMW])
-#     #currentdata = (mw, WFdLogMW)
-#     #to_plot.append(currentdata)
-#     #currentsample += 1
-
-#     mw = ','.join(mw)
-#     WFdLogMW = ','.join(WFdLogMW)
-#     currentdata = list([mw, WFdLogMW])
-#     to_plot.append(currentdata)
-#     currentsample += 1
-
-# to_plot_2D = np.squeeze(to_plot)
-# to_plot_2D = np.asarray(to_plot_2D)
-# to_plot_2D = np.reshape(to_plot_2D, newshape=(-1, 2*total_samples))
-# #print(to_plot_2D)
-# np.savetxt('arrayed_data.csv', (np.transpose(to_plot_2D)), fmt='%s', delimiter='\n', newline='\n')
-
-   
-# addsample = input('Do you have another sample to add? (y/n) ')
-# while addsample == 'y':
-#     fname_2 = input('What is the filename of polymer 2? ')
-#     p2_mw, p2_WFdLogMW = gpc_data_import(fname_2)
-#     addsample = input('Do you have another sample to add? (y/n) ')
-
-#plot the data on a graph?
-
-
-# print(currentdata)
+#@TO DO
+#for future - use loops and dictionary to plot and save to files an unlimited numbers of datasets!
+#https://stackoverflow.com/questions/6181935/how-do-you-create-different-variable-names-while-in-a-loop
