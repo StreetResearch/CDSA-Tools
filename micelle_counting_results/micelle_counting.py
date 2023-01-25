@@ -47,7 +47,7 @@ def getstats(dataset):
                 + "weight average length, Wn: %.2f nm \n" % wn
                 + "Wn / Ln (dispersity): %.2f \n" % pdi
                 + "standard deviation: %.2f nm \n" % sd
-                + "standard deviation / Ln: %.2f nm \n" % sdln
+                + "standard deviation / Ln: %.2f \n" % sdln
                 + r"5% confidence interval: " + "%.2f nm \n" % ci5
                 + r"95% confidence interval: " + "%.2f nm \n" % ci95
                 )
