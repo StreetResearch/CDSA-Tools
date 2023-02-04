@@ -5,8 +5,7 @@ Tools to make living CDSA easier and faster. This is a work in progress!
 TO INSTALL:
 ----
 <ol>
-  <li>Download the latest version of python 3 from here (these codes were written for python 3.10 or higher):<br>
-    <a href="https://www.python.org/downloads/"></li>
+  <li>Download the latest version of python 3 from <a href="https://www.python.org/downloads/">here</a> (these codes were written for python 3.10 or higher):</li>
   <li>Install python. Make sure to select the 'Add python.exe to PATH' in the installer if it is an option.</li>
   <li>Install the python modules we need (instructions for Windows):
     <ol>
