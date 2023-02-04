@@ -1,6 +1,6 @@
 # CDSA-Tools
 Tools to make living CDSA easier and faster. This is a work in progress!<br>
-Feel free to use them as you see fit. If you found these tools useful, it would be great if you could acknowledge this GitHub Repo! =)
+Feel free to use them as you see fit. If you found these tools useful, I would be greatful if you could acknowledge this GitHub Repo! =)
 
 ----
 TO INSTALL:
