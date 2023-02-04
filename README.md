@@ -19,7 +19,7 @@ TO INSTALL:
               <li>"pip3 install pandas"</li>
               <li>"pip3 install seaborn"</li>
             </ol>
-          <li>wait for each package to install before startng the next. You can use the same "pip3 install X" command to install any package named X.</li>
+          <li>wait for each package to install before starting the next. You can use the same "pip3 install X" command to install any package named X.</li>
           <li>you can check your python installation works by typing "py -3 --version" in the command prompt / powershell, it should tell you your python version.</li>
         </ol>
       <li>For OSX (mac users):</li>
@@ -32,6 +32,7 @@ TO INSTALL:
               <li>"python -m pip install pandas"</li>
               <li>"python -m pip install seaborn"</li>
             </ol>
+          <li>you can use the same "python -m pip install X" command to install any package named X.</li>
           <li>you can check python works by typing "python -V" in a terminal window to see your python version.</li>
         </ol>
       <li>Linux users should know what to do!!</li>
