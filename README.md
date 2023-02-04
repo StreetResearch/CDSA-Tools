@@ -7,7 +7,7 @@ TO INSTALL:
 <ol>
   <li>Download the latest version of python 3 from <a href="https://www.python.org/downloads/">here</a> (these codes were written for python 3.10 or higher):</li>
   <li>Install python. Make sure to select the 'Add python.exe to PATH' in the installer if it is an option.</li>
-  <li>Install the python modules we need (instructions for Windows):
+  <li>Install the python modules we need:
     <ol>
       <li>For windows:</li>
         <ol>
