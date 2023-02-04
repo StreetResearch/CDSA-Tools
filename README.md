@@ -46,7 +46,7 @@ Modules needed:
 
 You will need the following installed on your system to utilize these codes:
 <ol>
-  <li>Python 3.10</li>
+  <li>Python 3.10 or higher</li>
   <li>Numpy</li>
   <li>Matplotlib</li>
   <li>Pandas</li>
