@@ -71,7 +71,7 @@ So far, we have:<br>
   <li>Self-assembly tools:
     <ol>
       <li>living CDSA calculator (for seeded growth experiments)</li>
-      <li>Micelle Counting Statistics and Histogram Script (auotmates the analysis of measured nanoparticle sizes/lengths from Fiji/ImageJ).
+      <li>Micelle Counting Statistics and Histogram Script (automates the analysis of measured nanoparticle sizes/lengths from Fiji/ImageJ).
           <br>To use this script, just place it in the folder with your measurment data from Fiji and ensure the measurments file is called "Results.csv".<br>
           Then run the batch script!</li>
     </ol>
