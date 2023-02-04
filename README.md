@@ -39,7 +39,10 @@ TO INSTALL:
     </ol>
   <li>now you can use the scripts! The scripts are designed to go in the same folder as the data you wish to analyze. More details on this coming soon.</li> 
 </ol>
-
+<br>
+----
+Modules needed:
+----
 You will need the following installed on your system to utilize these codes:
 <ol>
   <li>Python 3.10</li>
@@ -48,6 +51,11 @@ You will need the following installed on your system to utilize these codes:
   <li>Pandas</li>
   <li>Seaborn</li>
 </ol>
+<br>
+----
+Current tools:
+----
+
 So far, we have:<br>
 <ol>
   <li>General chemistry tools:
