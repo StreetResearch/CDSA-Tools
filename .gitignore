@@ -3,3 +3,14 @@ histogram_with_density.png
 Results.csv
 statistics.txt
 test.py
+gpc_processing/fishy_omnisec-v10/arrayed_data.csv
+gpc_processing/fishy_omnisec-v10/combined_GPC_plot.png
+gpc_processing/fishy_omnisec-v10/P-SS065.csv
+gpc_processing/fishy_omnisec-v10/P-SS065test.csv
+gpc_processing/fishy_omnisec-v10/P-SS073.csv
+gpc_processing/fishy_omnisec-v10/P-SS073test.csv
+gpc_processing/salty_omnisec-v5/arrayed_data.csv
+gpc_processing/salty_omnisec-v5/combined_GPC_plot.png
+gpc_processing/salty_omnisec-v5/test.txt
+gpc_processing/salty_omnisec-v5/test.csv
+gpc_processing/salty_omnisec-v5/export data test/
