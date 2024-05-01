@@ -14,5 +14,10 @@ gpc_processing/salty_omnisec-v5/combined_GPC_plot.png
 gpc_processing/salty_omnisec-v5/test.txt
 gpc_processing/salty_omnisec-v5/test.csv
 gpc_processing/salty_omnisec-v5/export data test/
+micelle_counting_results/standalone_windows/build
+micelle_counting_results/standalone_windows/micelle_counting.py
+micelle_counting_results/standalone_windows/micelle_counting.spec
+gpc_processing/odovily_dmf-gpc_agilent-wyatt/P2VP.csv
+gpc_processing/odovily_dmf-gpc_agilent-wyatt/P2VP_Astra.xml
 Project_Phoenix/
 
