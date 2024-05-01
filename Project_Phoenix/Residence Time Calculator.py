@@ -70,6 +70,18 @@ def get_combined_fr(total_streams):
     stream2_flow_ratio = (flow_rate_2 / total_flow_rate) * 100
     return(total_flow_rate, flow_rate_1, flow_rate_2, stream1_flow_ratio, stream2_flow_ratio)
 
+#function to append data to output dataframe
+def append_to_dataframe (run_index,residence_time, reactor_volume, reactor_length, reactor_ID, total_flow_rate, streamA_flow_ratio, streamB_flow_ratio, streamA_flow_rate, streamB_flow_rate):
+    Output_data['Entry'].append(run_index)
+    Output_data['Residence Time (min)'].append(residence_time)
+    Output_data['Reactor Volume (mL)'].append(reactor_volume)
+    Output_data['Reactor Length (cm)'].append(reactor_length)
+    Output_data['Reactor ID (mm)'].append(reactor_ID)
+    Output_data['Total Flow Rate (uL/min)'].append(total_flow_rate)
+    Output_data['Stream A Flow Ratio (%)'].append(streamA_flow_ratio)
+    Output_data['Stream B Flow Ratio (%)'].append(streamB_flow_ratio)
+    Output_data['Stream A Flow Rate (uL/min)'].append(streamA_flow_rate)
+    Output_data['Stream B Flow Rate (uL/min)'].append(streamB_flow_rate)
 
 #---Do the calculatons---
 #prepare dictionary for dataframe output
@@ -117,16 +129,7 @@ while new_iteration == True:
     iterate = input('Would you like to perform another calculation? y or n? ')
     if iterate == 'y':
         #append current run data to output table
-        Output_data['Entry'].append(run_index)
-        Output_data['Residence Time (min)'].append(residence_time)
-        Output_data['Reactor Volume (mL)'].append(reactor_volume)
-        Output_data['Reactor Length (cm)'].append(reactor_length)
-        Output_data['Reactor ID (mm)'].append(reactor_ID)
-        Output_data['Total Flow Rate (uL/min)'].append(total_flow_rate)
-        Output_data['Stream A Flow Ratio (%)'].append(streamA_flow_ratio)
-        Output_data['Stream B Flow Ratio (%)'].append(streamB_flow_ratio)
-        Output_data['Stream A Flow Rate (uL/min)'].append(streamA_flow_rate)
-        Output_data['Stream B Flow Rate (uL/min)'].append(streamB_flow_rate)
+        append_to_dataframe (run_index,residence_time, reactor_volume, reactor_length, reactor_ID, total_flow_rate, streamA_flow_ratio, streamB_flow_ratio, streamA_flow_rate, streamB_flow_rate)
         #iterate for the next run
         new_iteration = True
         run_index += 1
@@ -134,16 +137,7 @@ while new_iteration == True:
         #end iteration of runs
         new_iteration = False
         #append current run data to output table
-        Output_data['Entry'].append(run_index)
-        Output_data['Residence Time (min)'].append(residence_time)
-        Output_data['Reactor Volume (mL)'].append(reactor_volume)
-        Output_data['Reactor Length (cm)'].append(reactor_length)
-        Output_data['Reactor ID (mm)'].append(reactor_ID)
-        Output_data['Total Flow Rate (uL/min)'].append(total_flow_rate)
-        Output_data['Stream A Flow Ratio (%)'].append(streamA_flow_ratio)
-        Output_data['Stream B Flow Ratio (%)'].append(streamB_flow_ratio)
-        Output_data['Stream A Flow Rate (uL/min)'].append(streamA_flow_rate)
-        Output_data['Stream B Flow Rate (uL/min)'].append(streamB_flow_rate)
+        append_to_dataframe (run_index,residence_time, reactor_volume, reactor_length, reactor_ID, total_flow_rate, streamA_flow_ratio, streamB_flow_ratio, streamA_flow_rate, streamB_flow_rate)
         #output data to excel sheet
         print(Output_data)
         Output_dataframe = pd.DataFrame(Output_data, index=[Output_data['Entry']])
