@@ -19,6 +19,5 @@ micelle_counting_results/standalone_windows/micelle_counting.py
 micelle_counting_results/standalone_windows/micelle_counting.spec
 gpc_processing/odovily_dmf-gpc_astra/P2VP.csv
 gpc_processing/odovily_dmf-gpc_astra/P2VP_Astra.xml
-Project_Phoenix/
-Project_Phoenix/*
+
 
