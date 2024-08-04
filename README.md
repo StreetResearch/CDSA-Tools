@@ -19,6 +19,9 @@ TO INSTALL:
               <li>"pip3 install matplotlib"</li>
               <li>"pip3 install pandas"</li>
               <li>"pip3 install seaborn"</li>
+              <li>"pip3 install scipy"</li>
+              <li>"pip3 install xlsxwriter"</li>
+              <li>"pip3 install hplc-py"</li>
             </ol>
           <li>wait for each package to install before starting the next. You can use the same "pip3 install X" command to install any package named X.</li>
           <li>you can check your python installation works by typing "py -3 --version" in the command prompt / powershell, it should tell you your python version.</li>
@@ -32,6 +35,9 @@ TO INSTALL:
               <li>"python -m pip install matplotlib"</li>
               <li>"python -m pip install pandas"</li>
               <li>"python -m pip install seaborn"</li>
+              <li>"python -m pip install scipy"</li>
+              <li>"python -m pip install xlsxwriter"</li>
+              <li>"python -m pip install hplc-py"</li>
             </ol>
           <li>you can use the same "python -m pip install X" command to install any package named X.</li>
           <li>you can check python works by typing "python -V" in a terminal window to see your python version.</li>
@@ -52,7 +58,12 @@ You will need the following installed on your system to utilize these codes:
   <li>Matplotlib</li>
   <li>Pandas</li>
   <li>Seaborn</li>
+  <li>SciPy</li>
+  <li>xlsxwriter</li>
+  <li>hplc-py</li>
 </ol>
+<br>
+Note, not all scripts need all packages.
 <br>
 ----
 Current tools:
@@ -64,8 +75,16 @@ So far, we have:<br>
     <ol>
       <li>Molecular Weight Calculator</li>
       <li>GPC processing and data plotting (supports multiple samples, uses Mw and WF/dLogM data).
-        <br>To use this scrpt, just place it in the same folder as your GPC data. Currently this only supports Malvern Omnisec instruments.
-        <br>An example of the data input format needed can be found in the 'GPC processing' folder.</li>
+        <br>To use this scrpt, just place it in the same folder as your GPC data. Currently this supports Malvern Omnisec instruments and Wyatt/Agilent insturments.
+        <br>Examples of the data input format needed can be found in the 'GPC processing' folder.</li>
+      <li>HPLC processing and data plotting.
+        <br>Supports Shimadzu insturments.</li>
+      <li>UV-Vis processing and data plotting.
+        <br>Supports Agilent insturments.</li>
+      <li>CD processing and data plotting.
+        <br>This is a work in progress.</li>
+      <li>Magritek Benchtop NMR Folder Cleanup.
+        <br>This script deletes the shim and standby datasets from a backup folder to save space.</li>
     </ol>
   </li>
 <br>
@@ -75,6 +94,8 @@ So far, we have:<br>
       <li>Micelle Counting Statistics and Histogram Script (automates the analysis of measured nanoparticle sizes/lengths from Fiji/ImageJ).
           <br>To use this script, just place it in the folder with your measurment data from Fiji and ensure the measurments file is called "Results.csv".<br>
           Then run the batch script!</li>
+      <li>Continuous-Flow Self-Assembly Experiment Planner.
+        <br>This script allows you to quickly and easily plan self-assembly experiemnts in flow. More features and updates are planned.</li>
     </ol>
   </li>
 </ol>
