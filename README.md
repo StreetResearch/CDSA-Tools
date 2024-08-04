@@ -62,8 +62,7 @@ You will need the following installed on your system to utilize these codes:
   <li>xlsxwriter</li>
   <li>hplc-py</li>
 </ol>
-<br>
-Note, not all scripts need all packages.
+Please Note: Not all scripts need all packages.
 <br>
 ----
 Current tools:
