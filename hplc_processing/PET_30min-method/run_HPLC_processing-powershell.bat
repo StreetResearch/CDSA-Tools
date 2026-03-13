@@ -1,0 +1,1 @@
+powershell.exe -executionpolicy bypass -file "HPLC_processing_powershell.ps1"

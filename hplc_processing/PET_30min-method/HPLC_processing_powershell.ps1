@@ -1,0 +1,1 @@
+python3.12 Automated_HPLC_Data_Processing_v2.py 2>&1 | % ToString | Tee-Object log.txt
